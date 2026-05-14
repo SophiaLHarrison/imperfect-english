@@ -15,8 +15,17 @@
       --ink: #211914;
       --muted: rgba(33, 25, 20, 0.7);
       --faint: rgba(33, 25, 20, 0.48);
-      --mustard: #d7a12b;
+   
       --cream: #f5ecdc;
+      --mustard: #d7a12b;
+      --sage: #c5ceb7;
+      --sky: #b8c9d4;
+      --mauve: #d8c7d2;
+      --olive-text: #4f5b4a;
+      --blue-text: #445d6c;
+      --ochre-text: #7b5b1e;
+      --plum-text: #6d5870;
+
       --white: #fffaf0;
       --line: rgba(33, 25, 20, 0.15);
       --line-strong: rgba(33, 25, 20, 0.28);
@@ -300,49 +309,262 @@
       letter-spacing: -0.02em;
     }
 
-    .service-list {
-      border-top: 1px solid var(--line-strong);
-    }
+    
+    .offer-bubbles {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(160px, 1fr));
+  gap: 1.4rem;
+  margin-top: 2rem;
+  align-items: center;
+}
 
-    .service-row {
-      display: grid;
-      grid-template-columns: minmax(180px, 0.8fr) minmax(0, 1.2fr) auto;
-      gap: 1.75rem;
-      align-items: center;
-      padding: 1.8rem 0;
-      border-bottom: 1px solid var(--line);
-    }
+.offer-bubble {
+  min-height: 230px;
+  padding: 1.7rem 1.4rem;
+  border: 1px solid rgba(33, 25, 20, 0.14);
+  color: var(--ink);
+  text-decoration: none;
+  box-shadow: 0 16px 36px rgba(33, 25, 20, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
 
-    .service-row h3 {
-      margin: 0;
-      font-family: "Fraunces", Georgia, serif;
-      font-size: clamp(1.35rem, 2vw, 1.9rem);
-      line-height: 1.05;
-      letter-spacing: -0.04em;
-      font-weight: 500;
-    }
+.offer-bubble:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 46px rgba(33, 25, 20, 0.12);
+}
 
-    .service-row p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.55;
-      max-width: 560px;
-    }
+.offer-label {
+  display: block;
+  margin-bottom: 0.8rem;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(1.35rem, 2vw, 1.9rem);
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+  color: var(--ink);
+}
 
-    .tiny-link {
-      white-space: nowrap;
-      padding: 0.62rem 0.82rem;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      color: rgba(33, 25, 20, 0.76);
-      font-size: 0.84rem;
-      font-weight: 700;
-    }
+.offer-blurb {
+  display: block;
+  color: rgba(33, 25, 20, 0.66);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
 
-    .tiny-link:hover {
-      border-color: var(--ink);
-      color: var(--ink);
-    }
+.offer-a,
+.offer-d {
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+}
+
+.offer-a {
+  background: rgba(197, 206, 183, 0.78);
+}
+
+.offer-b {
+  border-radius: 46% 54% 48% 52% / 54% 44% 56% 46%;
+  transform: translateY(1rem);
+  background: rgba(184, 201, 212, 0.78);
+}
+
+.offer-c {
+  border-radius: 55% 45% 52% 48% / 44% 58% 42% 56%;
+  transform: translateY(-0.5rem);
+  background: rgba(215, 161, 43, 0.28);
+}
+
+.offer-d {
+  background: rgba(216, 199, 210, 0.72);
+}
+
+.offer-b:hover {
+  transform: translateY(0.6rem);
+}
+
+.offer-c:hover {
+  transform: translateY(-0.9rem);
+}
+
+/* Offer detail sections */
+
+.offer-details {
+  padding-top: clamp(3rem, 6vw, 5rem);
+  background: var(--white);
+}
+
+.offer-world {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: center;
+  padding: clamp(3.5rem, 7vw, 6rem) 0;
+  border-top: 1px solid var(--line);
+  scroll-margin-top: 2rem;
+}
+
+.offer-world:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.world-card {
+  min-height: 360px;
+  padding: clamp(1.6rem, 3vw, 2.5rem);
+  border-radius: 2.4rem;
+  border: 1px solid rgba(33, 25, 20, 0.12);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 18px 46px rgba(33, 25, 20, 0.08);
+}
+
+.world-card .eyebrow {
+  margin-bottom: 1.4rem;
+}
+
+.world-title {
+  margin: 0;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(2.4rem, 5vw, 4.8rem);
+  line-height: 0.95;
+  letter-spacing: -0.065em;
+  font-weight: 500;
+}
+
+.world-hook {
+  margin: 1.4rem 0 0;
+  max-width: 460px;
+  font-size: clamp(1.08rem, 1.5vw, 1.28rem);
+  line-height: 1.42;
+  letter-spacing: -0.025em;
+}
+
+.world-copy p {
+  margin: 0 0 1rem;
+  color: var(--muted);
+  line-height: 1.68;
+  font-size: 1.02rem;
+  max-width: 640px;
+}
+
+.world-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin: 1.25rem 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.world-list li {
+  padding: 0.48rem 0.72rem;
+  border: 1px solid rgba(33, 25, 20, 0.14);
+  border-radius: 999px;
+  color: rgba(33, 25, 20, 0.66);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.detail-link {
+  display: inline-flex;
+  width: fit-content;
+  margin-top: 0.25rem;
+  padding: 0.86rem 1.05rem;
+  border: 1.5px solid var(--ink);
+  border-radius: 999px;
+  color: var(--ink);
+  font-weight: 800;
+  font-size: 0.92rem;
+  transition: 160ms ease;
+}
+
+.detail-link:hover {
+  background: var(--ink);
+  color: var(--cream);
+  transform: translateY(-1px);
+}
+
+/* Matched offer colors */
+
+.one-world .world-card {
+  background: rgba(197, 206, 183, 0.78);
+  color: var(--olive-text);
+  border-color: rgba(79, 91, 74, 0.16);
+}
+
+.one-world .world-card .eyebrow,
+.one-world .world-hook {
+  color: rgba(79, 91, 74, 0.78);
+}
+
+.one-world .world-title {
+  color: var(--olive-text);
+}
+
+.workshop-world .world-card {
+  background: rgba(184, 201, 212, 0.78);
+  color: var(--blue-text);
+  border-color: rgba(68, 93, 108, 0.16);
+}
+
+.workshop-world .world-card .eyebrow,
+.workshop-world .world-hook {
+  color: rgba(68, 93, 108, 0.76);
+}
+
+.workshop-world .world-title {
+  color: var(--blue-text);
+}
+
+.life-world .world-card {
+  background: rgba(215, 161, 43, 0.28);
+  color: var(--ochre-text);
+  border-color: rgba(123, 91, 30, 0.16);
+}
+
+.life-world .world-card .eyebrow,
+.life-world .world-hook {
+  color: rgba(123, 91, 30, 0.76);
+}
+
+.life-world .world-title {
+  color: var(--ochre-text);
+}
+
+.id-world .world-card {
+  background: rgba(216, 199, 210, 0.72);
+  color: var(--plum-text);
+  border-color: rgba(90, 64, 88, 0.14);
+}
+
+.id-world .world-card .eyebrow,
+.id-world .world-hook {
+  color: rgba(109, 88, 112, 0.78);
+}
+
+.id-world .world-title {
+  color: var(--plum-text);
+}
+
+.id-flow {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin-top: 1.4rem;
+}
+
+.id-flow span {
+  padding: 0.62rem 0.55rem;
+  border: 1px solid rgba(90, 64, 88, 0.22);
+  border-radius: 999px;
+  text-align: center;
+  color: rgba(90, 64, 88, 0.78);
+  font-size: 0.78rem;
+  font-weight: 800;
+  background: rgba(255, 250, 240, 0.24);
+}
 
     .about-grid {
   display: grid;
@@ -502,7 +724,39 @@ mark-card {
     footer p { margin: 0; }
 
     @media (max-width: 860px) {
-      .nav-links a:not(.pill-link) { display: none; }
+      .nav-links a:not(.pill-link) { display: none; .offer-bubbles {
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.offer-bubble,
+.offer-a,
+.offer-b,
+.offer-c,
+.offer-d {
+  min-height: auto;
+  aspect-ratio: auto;
+  border-radius: 2rem;
+  transform: none;
+}
+
+.offer-b:hover,
+.offer-c:hover {
+  transform: translateY(-4px);
+}
+
+.offer-world {
+  grid-template-columns: 1fr;
+  gap: 1.4rem;
+}
+
+.world-card {
+  min-height: auto;
+}
+
+.id-flow {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
 
       .hero-grid,
       .section-head,
@@ -564,39 +818,134 @@ mark-card {
     </section>
 
     <section class="section cream" id="work">
-      <div class="wrap">
-        <div class="section-head">
-          <h2 class="title">What I do.</h2>
-          <p class="lead">A small set of offers across teaching, workshops, and learning design.</p>
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="title">What I do.</h2>
+      <p class="lead">Choose what you need and jump to the details.</p>
+    </div>
+
+    <div class="offer-bubbles" aria-label="Offer menu">
+      <a class="offer-bubble offer-a" href="#one-to-one">
+        <span class="offer-label">1–1 classes</span>
+        <span class="offer-blurb">Private English support for adults who want more fluency, confidence, and ease.</span>
+      </a>
+
+      <a class="offer-bubble offer-b" href="#workshops">
+        <span class="offer-label">Workshops</span>
+        <span class="offer-blurb">Group sessions for communication, onboarding, systems, and real-world learning.</span>
+      </a>
+
+      <a class="offer-bubble offer-c" href="#life-abroad">
+        <span class="offer-label">Life abroad course</span>
+        <span class="offer-blurb">Practical language and confidence for living, working, and functioning abroad.</span>
+      </a>
+
+      <a class="offer-bubble offer-d" href="#instructional-design">
+        <span class="offer-label">Instructional design</span>
+        <span class="offer-blurb">Clear learning materials, course structure, and educational content support.</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+      <section class="section white offer-details" id="offer-details">
+  <div class="wrap">
+    <article class="offer-world one-world" id="one-to-one">
+      <div class="world-card">
+        <div>
+          <p class="eyebrow dark">1–1 Classes</p>
+          <h2 class="world-title">English that sounds more like you.</h2>
+        </div>
+        <p class="world-hook">Private classes for adults who want more fluency, confidence, and ease — without putting on a textbook personality.</p>
+      </div>
+
+      <div class="world-copy">
+        <p>We work with the English you actually need to use: conversation, vocabulary, pronunciation, cultural nuance, telling stories, asking for what you need, and speaking about your life or work more naturally.</p>
+        <p>Good for adults who already have some English and want to feel less stiff, less translated, and more like themselves when they speak.</p>
+        <ul class="world-list">
+          <li>fluency</li>
+          <li>confidence</li>
+          <li>natural speech</li>
+          <li>real situations</li>
+        </ul>
+        <a class="detail-link" href="mailto:sophia.harrisonn@gmail.com?subject=1%E2%80%931%20classes%20for%20adults">Contact me about 1–1 classes</a>
+      </div>
+    </article>
+
+    <article class="offer-world workshop-world" id="workshops">
+      <div class="world-card">
+        <div>
+          <p class="eyebrow dark">Workshops</p>
+          <h2 class="world-title">The English of your business.</h2>
+        </div>
+        <p class="world-hook">Not generic “Business English.” The language your people actually need for the work they do.</p>
+      </div>
+
+      <div class="world-copy">
+        <p>Bring me in to teach your staff, support onboarding, explain new systems, or build practical English and communication skills around your real workplace.</p>
+        <p>Useful for teams in client-facing, creative, service, beauty, fashion, hospitality, wellness, education, or international environments — anywhere people need to talk about products, services, taste, systems, clients, and daily work.</p>
+        <ul class="world-list">
+          <li>staff training</li>
+          <li>onboarding</li>
+          <li>client language</li>
+          <li>systems</li>
+        </ul>
+        <a class="detail-link" href="mailto:sophia.harrisonn@gmail.com?subject=Workshop%20inquiry">Contact me about a workshop</a>
+      </div>
+    </article>
+
+    <article class="offer-world life-world" id="life-abroad">
+      <div class="world-card">
+        <div>
+          <p class="eyebrow dark">Life Abroad</p>
+          <h2 class="world-title">For building a life somewhere unfamiliar.</h2>
+        </div>
+        <p class="world-hook">A practical course for the strange little situations traditional language classes often skip.</p>
+      </div>
+
+      <div class="world-copy">
+        <p>For people preparing to live, work, study, or function more confidently in another country — especially when language is only part of the problem.</p>
+        <p>We look at the real-life stuff: appointments, housing, healthcare, bureaucracy, work communication, social life, culture shock, asking for help, and staying human when everything feels harder than it should.</p>
+        <ul class="world-list">
+          <li>appointments</li>
+          <li>housing</li>
+          <li>healthcare</li>
+          <li>culture shock</li>
+          <li>daily systems</li>
+        </ul>
+        <a class="detail-link" href="mailto:sophia.harrisonn@gmail.com?subject=Life%20abroad%20course">Contact me about the life abroad course</a>
+      </div>
+    </article>
+
+    <article class="offer-world id-world" id="instructional-design">
+      <div class="world-card">
+        <div>
+          <p class="eyebrow dark">Instructional Design</p>
+          <h2 class="world-title">Turn messy knowledge into something teachable.</h2>
         </div>
 
-        <div class="service-list" aria-label="Services">
-          <article class="service-row">
-            <h3>1–1 classes for adults</h3>
-            <p>Private English classes focused on fluency, confidence, and natural communication.</p>
-            <a class="tiny-link" href="#info">Get info</a>
-          </article>
-
-          <article class="service-row">
-            <h3>Workshops</h3>
-            <p>Group sessions built around language, communication, or practical learning topics.</p>
-            <a class="tiny-link" href="#info">Get info</a>
-          </article>
-
-          <article class="service-row">
-            <h3>Life abroad course</h3>
-            <p>A course for people preparing to live, work, or function more confidently abroad.</p>
-            <a class="tiny-link" href="#info">Get info</a>
-          </article>
-
-          <article class="service-row">
-            <h3>Instructional design</h3>
-            <p>Learning materials, course outlines, workshops, and educational content development.</p>
-            <a class="tiny-link" href="#info">Get info</a>
-          </article>
+        <div class="id-flow" aria-label="Instructional design process">
+          <span>idea</span>
+          <span>shape</span>
+          <span>material</span>
+          <span>lesson</span>
         </div>
       </div>
-    </section>
+
+      <div class="world-copy">
+        <p>I help turn ideas, information, training needs, or half-built courses into clear learning materials people can actually use.</p>
+        <p>This can include course outlines, lesson plans, onboarding materials, workshops, worksheets, scripts, educational content, or a clearer structure for something you already teach.</p>
+        <ul class="world-list">
+          <li>course outlines</li>
+          <li>lesson plans</li>
+          <li>onboarding</li>
+          <li>learning materials</li>
+        </ul>
+        <a class="detail-link" href="mailto:sophia.harrisonn@gmail.com?subject=Instructional%20design%20inquiry">Contact me about a project</a>
+      </div>
+    </article>
+  </div>
+</section>    
 
     <section class="section white" id="about">
       <div class="wrap about-grid">

@@ -223,7 +223,65 @@
       margin-bottom: 3rem;
       align-items: start;
     }
+    .about-grid {
+  display: grid;
+  grid-template-columns: minmax(260px, 390px) minmax(320px, 430px);
+  gap: clamp(2.5rem, 7vw, 6rem);
+  align-items: center;
+  justify-content: center;
+}
 
+.about-letter {
+  width: min(100%, 420px);
+  min-height: 540px;
+  padding: clamp(2rem, 3vw, 2.6rem);
+  border: 1px solid rgba(33, 25, 20, 0.12);
+  border-radius: 2.1rem;
+  background: rgba(255, 250, 240, 0.62);
+  box-shadow: 0 18px 42px rgba(33, 25, 20, 0.07);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.letter-kicker {
+  margin: 0 0 1.25rem;
+  color: rgba(33, 25, 20, 0.42);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.about-letter p {
+  max-width: 100%;
+  color: rgba(33, 25, 20, 0.66);
+  line-height: 1.62;
+  font-size: 0.98rem;
+  margin: 0 0 1rem;
+}
+
+.about-letter .letter-opening {
+  color: var(--ink);
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(1.65rem, 2.2vw, 2.05rem);
+  line-height: 1.12;
+  letter-spacing: -0.05em;
+  margin-bottom: 1.2rem;
+}
+
+.letter-signoff {
+  margin-top: 1.35rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(33, 25, 20, 0.12);
+  color: rgba(33, 25, 20, 0.72);
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.2rem;
+  font-style: italic;
+  letter-spacing: -0.035em;
+}
+
+    
     .title {
       margin: 0;
       font-family: "Fraunces", Georgia, serif;
@@ -287,11 +345,12 @@
     }
 
     .about-grid {
-      display: grid;
-      grid-template-columns: minmax(230px, 0.55fr) minmax(0, 1.45fr);
-      gap: clamp(2.5rem, 6vw, 5.5rem);
-      align-items: center;
-    }
+  display: grid;
+  grid-template-columns: minmax(260px, 390px) minmax(320px, 430px);
+  gap: clamp(2.5rem, 7vw, 6rem);
+  align-items: center;
+  justify-content: center;
+}
 
 .portrait-oval {
   position: relative;
@@ -545,12 +604,13 @@ mark-card {
   <img src="./assets/images/sophia.jpg" alt="Sophia Harrison" />
 </figure>
 
-         <div class="about-copy">
-          <p>Amgonst many things, I’m an educator, writer, and learning designer interested in the useful things traditional education often forgets to teach.</p>
-          <p>My work sits between language, culture, communication, and real life — helping people find clearer ways to speak, learn, work, explain, and belong.</p>
-          <p>I’m especially useful when something is still a little messy: a conversation, a course, a workplace system, a move abroad, or an idea that needs a more human shape.</p>
-        </div>
-      </div>
+         <div class="about-letter">
+  <p class="letter-kicker">A note from Sophia</p>
+  <p class="letter-opening">I care about the useful things traditional education often forgets to teach.</p>
+  <p>My work sits between language, culture, communication, and real life — helping people find clearer ways to speak, learn, work, explain, and belong.</p>
+  <p>I’m especially useful when something is still a little messy: a conversation, a course, a workplace system, a move abroad, or an idea that needs a more human shape.</p>
+  <div class="letter-signoff">Sophia</div>
+</div>
     </section>
 
     <section class="section ink" id="info">

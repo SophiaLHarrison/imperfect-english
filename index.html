@@ -293,23 +293,36 @@
       align-items: center;
     }
 
-    .portrait-card {
-  width: min(100%, 340px);
+.portrait-oval {
+  position: relative;
+  width: min(100%, 420px);
   aspect-ratio: 4 / 5;
-  border: 1px solid var(--line);
-  border-radius: 2rem;
-  background: var(--white);
-  box-shadow: var(--shadow);
-  overflow: hidden;
   margin: 0;
+  isolation: isolate;
 }
 
-.portrait-card img {
+.portrait-oval::before {
+  content: "";
+  position: absolute;
+  inset: -4% -7% 3% 10%;
+  z-index: -1;
+  background: var(--mustard);
+  border-radius: 50%;
+  transform: rotate(4deg);
+}
+
+.portrait-oval img {
   width: 100%;
   height: 100%;
   display: block;
   object-fit: cover;
-}mark-card {
+  object-position: center top;
+  border-radius: 50%;
+}
+
+
+    
+mark-card {
       display: grid;
       place-items: center;
       width: min(100%, 320px);
@@ -528,7 +541,7 @@
 
     <section class="section white" id="about">
       <div class="wrap about-grid">
-        <figure class="portrait-card">
+        <figure class="portrait-oval">
   <img src="./assets/images/sophia.jpg" alt="Sophia Harrison" />
 </figure>
 

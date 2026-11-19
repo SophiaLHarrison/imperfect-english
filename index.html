@@ -79,7 +79,8 @@
     }
     .by {
       margin-top: clamp(8px, 1.8vh, 16px);
-      font-size: clamp(16px, 2.6vh, 24px);
+      max-width: 34ch;
+      font-size: clamp(15px, 2.1vh, 18px);
     }
 
     /* ---------- right column ---------- */
@@ -146,6 +147,8 @@
       .photo { width: 110px; margin: 0; grid-row: 1 / span 3; align-self: center; }
       h1 { font-size: 52px; }
       .tagline, .by { grid-column: 2; font-size: 16px; margin-top: 8px; }
+      .by { grid-column: 1 / -1; max-width: none; }
+      .photo { grid-row: 1 / span 2; }
       .box { flex: none; width: 100%; max-width: 540px; border-radius: 28px; padding: 20px; }
       .box h2 { font-size: 18px; margin-bottom: 4px; }
       .box p { font-size: 15px; line-height: 1.45; }
@@ -163,7 +166,7 @@
       </div>
       <h1>Private<br>English</h1>
       <p class="tagline">Learning through Conversation</p>
-      <p class="by">With Sophia Harrison</p>
+      <p class="by">I’m Sophia Harrison, an English teacher with over 10 years of experience and a master’s in linguistics. I help adults feel more comfortable speaking English in the conversations that matter to them.</p>
     </section>
 
     <section class="box">
